@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "../ResponsiveImage";
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { ChatReply, ChatService, TopicContext } from "./chat-service";
 import {
@@ -332,7 +333,13 @@ export function JocaChat({
         onClick={(event) => onOpen({ trigger: event.currentTarget })}
       >
         <span>Fale com a Jóca</span>
-        <img src="/images/joca-avatar.png" width="60" height="60" alt="" />
+        <ResponsiveImage
+          sizes="64px"
+          src="/images/joca-avatar.png"
+          width="60"
+          height="60"
+          alt=""
+        />
       </button>
       {request && (
         <dialog
@@ -363,7 +370,13 @@ export function JocaChat({
           }}
         >
           <header className="joca-chat-header">
-            <img src="/images/joca-avatar.png" width="44" height="44" alt="" />
+            <ResponsiveImage
+              sizes="64px"
+              src="/images/joca-avatar.png"
+              width="44"
+              height="44"
+              alt=""
+            />
             <div>
               <h2 id="joca-chat-title">Jóca</h2>
               <p>Assistente Virtual da Escola Joyce Helena</p>

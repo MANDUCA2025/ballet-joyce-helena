@@ -1,0 +1,16 @@
+{
+  "source": "/videos/joca-apresentacao.mp4",
+  "sourceSha256": "86bb98975fd49a398d69e4b9a9a2439062f0df9d74491675e3d71f4610749aac",
+  "authorization": "SITE-JOYCE-007C.3A: local web derivative and poster from the unchanged approved original.",
+  "encoding": "libx264 CRF 23, preset slow, yuv420p; AAC stream copy; +faststart; no crop, scale or frame-rate change",
+  "assets": [
+    {
+      "path": "videos/joca-apresentacao-web.mp4",
+      "sha256": "5379a2bc5b10798ea0315274fdfe4d710aa47070e7058c9d02b699ab63dc7687"
+    },
+    {
+      "path": "videos/joca-apresentacao-poster.webp",
+      "sha256": "01d5b29719d8a42af787858fc947f89f9bf47769c96e999e8e400f90f3b4ffd9"
+    }
+  ]
+}

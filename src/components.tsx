@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "./ResponsiveImage";
 import "./brand-schedules.css";
 import { useRef, useState } from "react";
 import type { ReactNode } from "react";
@@ -23,7 +24,9 @@ export function Header() {
           href="#inicio"
           aria-label="Joyce Helena — início"
         >
-          <img
+          <ResponsiveImage
+            sizes="88px"
+            fetchPriority="high"
             src={content.brand.logo}
             width="88"
             height="88"
@@ -118,7 +121,7 @@ export function OptionalImage({
       </p>
     </div>
   ) : (
-    <img
+    <ResponsiveImage
       className={className}
       src={src}
       alt={alt}
@@ -134,10 +137,10 @@ export function PhotoSlot({ photo }: { photo: AuthorizedPhoto }) {
   return (
     <figure className="official-photo">
       {available && !failed ? (
-        <img
+        <ResponsiveImage
           src={photo.src!}
           alt={photo.alt}
-          loading="eager"
+          loading="lazy"
           onError={() => setFailed(true)}
         />
       ) : (

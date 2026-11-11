@@ -1,0 +1,439 @@
+{
+  "/images/espetaculo-quatro-estacoes-2026.png": {
+    "width": 642,
+    "height": 865,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculo-quatro-estacoes-2026-480.webp",
+        "width": 480,
+        "bytes": 92152,
+        "sha256": "6ff9ed5c127fb5f3eb9484779ea2666089ce71602d5fe3b8b77faf6abb9a55b8"
+      },
+      {
+        "src": "/images/optimized/espetaculo-quatro-estacoes-2026-642.webp",
+        "width": 642,
+        "bytes": 146132,
+        "sha256": "ae3a5004276382182862a4d6e6d25679e3b90ec54d3b9428a781f031d6552bbf"
+      }
+    ]
+  },
+  "/images/joca-perfil.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "/images/optimized/joca-perfil-480.webp",
+        "width": 480,
+        "bytes": 15114,
+        "sha256": "824ede5e1943052483023e40011aab62f33b6cf80df4c80308c9838ce5a15ae8"
+      },
+      {
+        "src": "/images/optimized/joca-perfil-960.webp",
+        "width": 960,
+        "bytes": 42196,
+        "sha256": "101abd4929c92089529bf53e73aaabde3ed52616019c3d7ec6b044ed4cc8dc98"
+      },
+      {
+        "src": "/images/optimized/joca-perfil-1254.webp",
+        "width": 1254,
+        "bytes": 63242,
+        "sha256": "6db43ce121de862811d4d0d1974ab5b35f70ecf84eba5b43ceab2803a290faa0"
+      }
+    ]
+  },
+  "/images/joca-personagem.jpg": {
+    "width": 1844,
+    "height": 2304,
+    "variants": [
+      {
+        "src": "/images/optimized/joca-personagem-480.webp",
+        "width": 480,
+        "bytes": 21274,
+        "sha256": "cf49474bffa93ba019cc7bfefb8b723e351d7a1eac521079bccd0695110d1978"
+      },
+      {
+        "src": "/images/optimized/joca-personagem-960.webp",
+        "width": 960,
+        "bytes": 52852,
+        "sha256": "03939d2447c912df70917cfa1c7924f4ef9694f4ee1ce7691b9822b31172ef22"
+      },
+      {
+        "src": "/images/optimized/joca-personagem-1600.webp",
+        "width": 1600,
+        "bytes": 101056,
+        "sha256": "408243914f8e489a66b664fe6b5bd2adbc270bc3e556f3c7a0e70fae83f96b8f"
+      }
+    ]
+  },
+  "/images/joyce-helena-equipe.png": {
+    "width": 1234,
+    "height": 1275,
+    "variants": [
+      {
+        "src": "/images/optimized/joyce-helena-equipe-480.webp",
+        "width": 480,
+        "bytes": 48610,
+        "sha256": "fa30a950dd2a33fb25a02ea725afc94c7a2fc64e7f7f354283865f65c480a8e7"
+      },
+      {
+        "src": "/images/optimized/joyce-helena-equipe-960.webp",
+        "width": 960,
+        "bytes": 139072,
+        "sha256": "39f8839341306fc076d2bee3639ae6d1c96114b4a96ddfe3cfeb418cb24bdd0a"
+      },
+      {
+        "src": "/images/optimized/joyce-helena-equipe-1234.webp",
+        "width": 1234,
+        "bytes": 199192,
+        "sha256": "6b73b5aa1f1f5353fc8c1c3e1d5931a5ed133500d9c3db5a6e390f1956f7817e"
+      }
+    ]
+  },
+  "/images/joyce-helena-fundadora.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "src": "/images/optimized/joyce-helena-fundadora-480.webp",
+        "width": 480,
+        "bytes": 51896,
+        "sha256": "2d48cc561182e4f5be013f77b622229872b15138488f6e787ef21dcfe175aed3"
+      },
+      {
+        "src": "/images/optimized/joyce-helena-fundadora-960.webp",
+        "width": 960,
+        "bytes": 136288,
+        "sha256": "ae3aa9e05616cdfd0359df801cf96fb124002a446fed323709b6c33d75b97902"
+      },
+      {
+        "src": "/images/optimized/joyce-helena-fundadora-1024.webp",
+        "width": 1024,
+        "bytes": 151492,
+        "sha256": "530a1c1e07ef78b3aa99840be3a0352dcae107feb986a3b0ac7030ca06dd1a18"
+      }
+    ]
+  },
+  "/images/joyce-helena-nossa-escola.png": {
+    "width": 691,
+    "height": 862,
+    "variants": [
+      {
+        "src": "/images/optimized/joyce-helena-nossa-escola-480.webp",
+        "width": 480,
+        "bytes": 45308,
+        "sha256": "4fad93baf20f133e78e3202fda159e492b71b13161a1ddf11ad1d02f23684c3a"
+      },
+      {
+        "src": "/images/optimized/joyce-helena-nossa-escola-691.webp",
+        "width": 691,
+        "bytes": 76654,
+        "sha256": "a496bfa3f0e0e6a3206ee75fcbbde9200b970086a3ee22ed6c04b31e0b466a7e"
+      }
+    ]
+  },
+  "/images/logo-joyce-helena.jpg": {
+    "width": 1024,
+    "height": 1024,
+    "variants": []
+  },
+  "/images/escola/aula-acolhimento.png": {
+    "width": 606,
+    "height": 852,
+    "variants": [
+      {
+        "src": "/images/optimized/escola-aula-acolhimento-480.webp",
+        "width": 480,
+        "bytes": 37456,
+        "sha256": "0e55020fc46b8f3a624ca7d9ab5e9f5317f6ee5cc14555b76b1322b1ec128562"
+      },
+      {
+        "src": "/images/optimized/escola-aula-acolhimento-606.webp",
+        "width": 606,
+        "bytes": 49016,
+        "sha256": "2f504d75ac6e703c7c80e986f92f4db774b9d7cb685f5d51a09f49b4b736b0ae"
+      }
+    ]
+  },
+  "/images/escola/aula-acompanhamento.png": {
+    "width": 600,
+    "height": 784,
+    "variants": [
+      {
+        "src": "/images/optimized/escola-aula-acompanhamento-480.webp",
+        "width": 480,
+        "bytes": 46884,
+        "sha256": "4faec1cd6a960fbdf4bd13612ebf813db546f66a0af761cf0ad4fa7fb0e31607"
+      },
+      {
+        "src": "/images/optimized/escola-aula-acompanhamento-600.webp",
+        "width": 600,
+        "bytes": 66012,
+        "sha256": "0793176109e6acce40fbfd9d20292f12c6eedf82ddcb84228b2b9c88dc416027"
+      }
+    ]
+  },
+  "/images/escola/aula-convivencia.png": {
+    "width": 485,
+    "height": 620,
+    "variants": [
+      {
+        "src": "/images/optimized/escola-aula-convivencia-480.webp",
+        "width": 480,
+        "bytes": 31558,
+        "sha256": "8a307d252fe3403a4642bc305f5c0567e91da04a7a1e17a8dc7bddee9f7a3667"
+      },
+      {
+        "src": "/images/optimized/escola-aula-convivencia-485.webp",
+        "width": 485,
+        "bytes": 31874,
+        "sha256": "00cc81a0e5791e7f3483da777230b730cbe72d837124cac5c3e1ab6413c57322"
+      }
+    ]
+  },
+  "/images/escola/aula-desenvolvimento.png": {
+    "width": 579,
+    "height": 743,
+    "variants": [
+      {
+        "src": "/images/optimized/escola-aula-desenvolvimento-480.webp",
+        "width": 480,
+        "bytes": 42808,
+        "sha256": "cbf52bfb7cbf63893cb7bb33d4357d2aaac4ebf50777ba34f63f8895d27ffbee"
+      },
+      {
+        "src": "/images/optimized/escola-aula-desenvolvimento-579.webp",
+        "width": 579,
+        "bytes": 56914,
+        "sha256": "71a525d3d02d98663c87371218605641bf9554664b787f6a0454868d6d6b39ba"
+      }
+    ]
+  },
+  "/images/escola/aula-primeiros-passos.png": {
+    "width": 646,
+    "height": 808,
+    "variants": [
+      {
+        "src": "/images/optimized/escola-aula-primeiros-passos-480.webp",
+        "width": 480,
+        "bytes": 47594,
+        "sha256": "26186488493c38e101b3d7ac15eefefca0a8f0657eabdb3f104b721747e64cc5"
+      },
+      {
+        "src": "/images/optimized/escola-aula-primeiros-passos-646.webp",
+        "width": 646,
+        "bytes": 67902,
+        "sha256": "0bfed8697faedcfa0aaf566f4a0d103a859c079fdb965b397dd10c2db7a6d8d8"
+      }
+    ]
+  },
+  "/images/escola/aula-tecnica.png": {
+    "width": 482,
+    "height": 599,
+    "variants": [
+      {
+        "src": "/images/optimized/escola-aula-tecnica-480.webp",
+        "width": 480,
+        "bytes": 33002,
+        "sha256": "ac9b6189005cf4486d060038e4df73b43be7c24984d90dceef3de49d1860a78a"
+      },
+      {
+        "src": "/images/optimized/escola-aula-tecnica-482.webp",
+        "width": 482,
+        "bytes": 33232,
+        "sha256": "c01c8ad4e210e1b3e32cb5d6ab4e1d0fa53f26bd0a5563e4fe97777091285e74"
+      }
+    ]
+  },
+  "/images/espetaculos/2024/2024-apresentacao-01.png": {
+    "width": 486,
+    "height": 803,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2024-2024-apresentacao-01-480.webp",
+        "width": 480,
+        "bytes": 31290,
+        "sha256": "0c258e73d539311dcbad0827717a813bfa5dbeb5b8a6076a1bfffb0787481ce1"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2024-2024-apresentacao-01-486.webp",
+        "width": 486,
+        "bytes": 32950,
+        "sha256": "3da871e5b68ec8511cdb6663393647ff01e6b5b2061ce0a7c58eaacd803eed49"
+      }
+    ]
+  },
+  "/images/espetaculos/2024/2024-apresentacao-02.png": {
+    "width": 482,
+    "height": 655,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2024-2024-apresentacao-02-480.webp",
+        "width": 480,
+        "bytes": 25138,
+        "sha256": "065ffd284fd7142eb2027744611cc75b8b5270f782876fad1261e79a1ec4e8ea"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2024-2024-apresentacao-02-482.webp",
+        "width": 482,
+        "bytes": 25596,
+        "sha256": "4d256dcaffc62ab261b9cface225ff2037374c70348484be93a10ef5837cee26"
+      }
+    ]
+  },
+  "/images/espetaculos/2024/2024-apresentacao-03.png": {
+    "width": 487,
+    "height": 548,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2024-2024-apresentacao-03-480.webp",
+        "width": 480,
+        "bytes": 26366,
+        "sha256": "9e2d4cd6f48d6d5896d30120cb6408d274351067de11c1ee8f7da4f4a8d8c105"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2024-2024-apresentacao-03-487.webp",
+        "width": 487,
+        "bytes": 26994,
+        "sha256": "5223828bd1bcff43be14afeb449fc2fc6508c27bd6a42730a79fda656b0c46d5"
+      }
+    ]
+  },
+  "/images/espetaculos/2025/2025-apresentacao-01.png": {
+    "width": 712,
+    "height": 863,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-01-480.webp",
+        "width": 480,
+        "bytes": 35312,
+        "sha256": "7bb26557d35405c3bd37538613cbb091471909fef34feea5a11ee36ab6858443"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-01-712.webp",
+        "width": 712,
+        "bytes": 66220,
+        "sha256": "f393c46bf5e42dcb9b92ec59730d64d2daf1c800bf458794ecdbee1b05dffdc9"
+      }
+    ]
+  },
+  "/images/espetaculos/2025/2025-apresentacao-02.png": {
+    "width": 660,
+    "height": 853,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-02-480.webp",
+        "width": 480,
+        "bytes": 23784,
+        "sha256": "5249e805ce5166f651a8757e4a14f4db2bac1c9384750543589ada3114232f33"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-02-660.webp",
+        "width": 660,
+        "bytes": 36182,
+        "sha256": "787bd8f718e0ff37d8eff6f206f30b91a34d9cb372fb6147f2862e1b255ea17b"
+      }
+    ]
+  },
+  "/images/espetaculos/2025/2025-apresentacao-03.png": {
+    "width": 698,
+    "height": 584,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-03-480.webp",
+        "width": 480,
+        "bytes": 38414,
+        "sha256": "81e8e35e3752aadb7a549c801a9dc2fa401319a4138dad3cc8fbaeddfc52ce5a"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-03-698.webp",
+        "width": 698,
+        "bytes": 70662,
+        "sha256": "e0fa1fd37510052a9dab7a1bc1a4de3742b98bcc5eebdd4f9ca509b39f505644"
+      }
+    ]
+  },
+  "/images/espetaculos/2025/2025-apresentacao-04.png": {
+    "width": 746,
+    "height": 815,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-04-480.webp",
+        "width": 480,
+        "bytes": 34540,
+        "sha256": "2dc555633ead4d092fdbf234fbc06db2a095bfc66c2469f059aeef732d663fdf"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-04-746.webp",
+        "width": 746,
+        "bytes": 59838,
+        "sha256": "f2d79a61026690a38d5029a9a0d6bee32e7ea201823c5e165782f3dc1977e36c"
+      }
+    ]
+  },
+  "/images/espetaculos/2025/2025-apresentacao-05.png": {
+    "width": 483,
+    "height": 284,
+    "variants": [
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-05-480.webp",
+        "width": 480,
+        "bytes": 14478,
+        "sha256": "17e85bf6a12cb019e7e817f4fa36e637ec0dcb28d83de8fa547eac3c86adebfb"
+      },
+      {
+        "src": "/images/optimized/espetaculos-2025-2025-apresentacao-05-483.webp",
+        "width": 483,
+        "bytes": 14780,
+        "sha256": "32c955d186d4706ff0f1e7cddcb95f099e2a34391435d50a5a3bd23ea3e10ca1"
+      }
+    ]
+  },
+  "/images/hero-joyce-helena.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "src": "/images/optimized/hero-joyce-helena-480.webp",
+        "width": 480,
+        "bytes": 36076,
+        "sha256": "6a388a2e1aaac503300f5372c1d2574b690f9e3a1487888392d4e27f828e0029"
+      },
+      {
+        "src": "/images/optimized/hero-joyce-helena-960.webp",
+        "width": 960,
+        "bytes": 102026,
+        "sha256": "df8da8d77a161b9b3b56439d7110ab8a21d68f7811ace244643c17a86251b950"
+      },
+      {
+        "src": "/images/optimized/hero-joyce-helena-1448.webp",
+        "width": 1448,
+        "bytes": 182340,
+        "sha256": "62cb4f3d257bb1cfff6a87dd65d6ec9508b1c98ce8f2f57950b6406cb5ff7604"
+      }
+    ]
+  },
+  "/images/joca-avatar.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "/images/optimized/joca-avatar-480.webp",
+        "width": 480,
+        "bytes": 18234,
+        "sha256": "3566f7a5c2ba081b658ef68af865d63cd6c7a0c7b91394bccfda35a0684602f2"
+      },
+      {
+        "src": "/images/optimized/joca-avatar-960.webp",
+        "width": 960,
+        "bytes": 53972,
+        "sha256": "57a1d44d7111039c718929ec595a60103b641a11c8fa4d77d385a1f92432049e"
+      },
+      {
+        "src": "/images/optimized/joca-avatar-1254.webp",
+        "width": 1254,
+        "bytes": 83950,
+        "sha256": "b26c7053eeae6273f74a6c2565b3640fc45059e87cdc0d1aa3ea422a25d3cb6a"
+      }
+    ]
+  }
+}

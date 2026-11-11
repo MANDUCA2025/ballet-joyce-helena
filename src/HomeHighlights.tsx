@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "./ResponsiveImage";
 import type { ReactNode } from "react";
 import { content as c } from "./content";
 import "./home-highlights.css";
@@ -48,7 +49,7 @@ export function Hero() {
       <figure className="home-hero-photo">
         {photo.authorized ? (
           <>
-            <img
+            <ResponsiveImage
               src={photo.src}
               alt={photo.alt}
               width={photo.width}
@@ -99,7 +100,8 @@ export function SeasonalEvent() {
       aria-labelledby="seasonal-title"
     >
       <figure>
-        <img
+        <ResponsiveImage
+          loading="lazy"
           src={c.event.poster}
           width="642"
           height="865"

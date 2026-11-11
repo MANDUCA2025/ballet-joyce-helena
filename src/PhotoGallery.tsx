@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "./ResponsiveImage";
 import { useEffect, useRef, useState } from "react";
 import { galleryPhotos, galleryCollections } from "./gallery-content";
 import "./photo-gallery.css";
@@ -57,7 +58,8 @@ export function PhotoGallery({
                 setActive(index);
               }}
             >
-              <img
+              <ResponsiveImage
+                sizes="(min-width: 1000px) 30vw, (min-width: 600px) 45vw, 90vw"
                 src={item.src}
                 alt={item.alt}
                 width={item.width}
@@ -125,7 +127,8 @@ export function PhotoGallery({
         </div>
         {photo && (
           <figure>
-            <img
+            <ResponsiveImage
+              sizes="90vw"
               src={photo.src}
               alt={photo.alt}
               width={photo.width}

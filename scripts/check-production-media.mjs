@@ -9,6 +9,23 @@ const root = resolve(argv[2] ?? "dist");
 const assets = new Map(
   registry.assets.filter((a) => a.authorized === true).map((a) => [a.path, a]),
 );
+const derivatives = JSON.parse(
+  readFileSync("src/responsive-images.json", "utf8"),
+);
+for (const [source, image] of Object.entries(derivatives)) {
+  if (!assets.has(source.slice(1)))
+    throw new Error("Original não autorizado: " + source);
+  for (const variant of image.variants) {
+    assets.set(variant.src.slice(1), variant);
+  }
+}
+const videoDerivatives = JSON.parse(
+  readFileSync("src/video-derivatives.json", "utf8"),
+);
+const originalVideo = assets.get(videoDerivatives.source.slice(1));
+if (!originalVideo || originalVideo.sha256 !== videoDerivatives.sourceSha256)
+  throw new Error("Video derivative source must match an authorized original");
+for (const asset of videoDerivatives.assets) assets.set(asset.path, asset);
 const found = new Set();
 for (const entry of readdirSync(root, {
   recursive: true,

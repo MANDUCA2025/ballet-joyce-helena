@@ -11,12 +11,17 @@ test("restored founder story and official team keyboard expansion", async ({
 }) => {
   await page.goto("/");
   const section = page.locator("#fundadora");
-  await expect(section.locator(".founder-summary")).toHaveText(content.founder.summary);
+  await expect(section.locator(".founder-summary")).toHaveText(
+    content.founder.summary,
+  );
   const toggle = section.getByRole("button");
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
-  await toggle.focus(); await page.keyboard.press("Enter");
+  await toggle.focus();
+  await page.keyboard.press("Enter");
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
-  await expect(section.locator(".story-expanded p")).toHaveText(content.founder.story);
+  await expect(section.locator(".story-expanded p")).toHaveText(
+    content.founder.story,
+  );
   await page.keyboard.press("Space");
   await expect(section.locator(".story-expanded")).toBeHidden();
   await page
@@ -36,7 +41,7 @@ test("restored founder story and official team keyboard expansion", async ({
 test("official photo failures keep the three sections available", async ({
   page,
 }) => {
-  await page.route("**/images/joyce-helena-*.png", (r) =>
+  await page.route(/\/images\/(?:optimized\/)?joyce-helena-/, (r) =>
     r.fulfill({ status: 404, body: "" }),
   );
   await page.goto("/");
@@ -48,9 +53,7 @@ test("official photo failures keep the three sections available", async ({
     ).toBeVisible();
     await expect(section.locator(".official-photo img")).toHaveCount(0);
   }
-  await expect(
-    page.locator("#fundadora .founder-summary"),
-  ).toBeVisible();
+  await expect(page.locator("#fundadora .founder-summary")).toBeVisible();
 });
 test("responsive institutional sections and desktop/mobile captures", async ({
   page,

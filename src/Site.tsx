@@ -3,10 +3,12 @@ import { App } from "./App";
 import { JocaIntro, shouldShowIntro } from "./JocaIntro";
 export function Site() {
   const [intro, setIntro] = useState(shouldShowIntro);
+  const [homepageReady, setHomepageReady] = useState(() => !intro);
   const returnTo = useRef<HTMLElement | null>(null);
   const pendingFocus = useRef(false);
   const finish = useCallback(() => {
     pendingFocus.current = true;
+    setHomepageReady(true);
     setIntro(false);
   }, []);
   useEffect(() => {
@@ -25,7 +27,7 @@ export function Site() {
   }
   return (
     <>
-      <App onReplayIntro={replay} />
+      {homepageReady && <App onReplayIntro={replay} />}
       {intro && <JocaIntro onFinish={finish} />}
     </>
   );

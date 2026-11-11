@@ -119,7 +119,7 @@ test("mobile navigation, Escape and responsive layout", async ({ page }) => {
 test("missing Jóca assets show a clear fallback without broken images", async ({
   page,
 }) => {
-  await page.route("**/images/joca-*", (route) =>
+  await page.route(/\/images\/(?:optimized\/)?joca-/, (route) =>
     route.fulfill({ status: 404, body: "" }),
   );
   await page.goto("/");

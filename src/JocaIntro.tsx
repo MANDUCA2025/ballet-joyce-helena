@@ -1,18 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./joca-intro.css";
 export const INTRO_SESSION_KEY = "joyce-helena:intro-seen:v1";
+export const INTRO_PRESENTED_KEY = "joyce-helena:intro-presented:v1";
 export function shouldShowIntro() {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-    return false;
   try {
-    return window.sessionStorage.getItem(INTRO_SESSION_KEY) !== "1";
+    return (
+      window.sessionStorage.getItem(INTRO_SESSION_KEY) !== "1" &&
+      window.sessionStorage.getItem(INTRO_PRESENTED_KEY) !== "1"
+    );
   } catch {
     return true;
   }
 }
-function markSeen() {
+function markSession(key: string) {
   try {
-    window.sessionStorage.setItem(INTRO_SESSION_KEY, "1");
+    window.sessionStorage.setItem(key, "1");
   } catch {
     /* Storage restrictions never block entry. */
   }
@@ -25,46 +27,47 @@ export function JocaIntro({ onFinish }: { onFinish: () => void }) {
   const exitTimer = useRef<number | undefined>(undefined);
   const [leaving, setLeaving] = useState(false);
   const [sound, setSound] = useState(false);
-  const finish = useCallback(() => {
-    if (finished.current) return;
-    finished.current = true;
-    video.current?.pause();
-    markSeen();
-    setLeaving(true);
-    const reduced = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    exitTimer.current = window.setTimeout(onFinish, reduced ? 0 : 240);
-  }, [onFinish]);
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const [manual, setManual] = useState(reduced);
+  const finish = useCallback(
+    (completed = true) => {
+      if (finished.current) return;
+      finished.current = true;
+      video.current?.pause();
+      if (completed) markSession(INTRO_SESSION_KEY);
+      setLeaving(true);
+      const reduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      exitTimer.current = window.setTimeout(onFinish, reduced ? 0 : 240);
+    },
+    [onFinish],
+  );
   useEffect(() => {
     const modal = dialog.current,
       player = video.current;
     if (!modal || !player) return;
     finished.current = false;
-    markSeen();
     modal.showModal();
+    // Presentation and completion are distinct: reload must not restart an unfinished visit.
+    markSession(INTRO_PRESENTED_KEY);
     skip.current?.focus();
     const overflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const timeout = window.setTimeout(finish, 10000);
-    const loadTimeout = window.setTimeout(() => {
-      if (player.readyState < 2) finish();
-    }, 4000);
     let disposed = false;
     player.muted = true;
-    void player.play().catch(() => {
-      if (!disposed) finish();
-    });
+    if (!reduced)
+      void player.play().catch(() => {
+        if (!disposed) setManual(true);
+      });
     return () => {
       disposed = true;
-      window.clearTimeout(timeout);
-      window.clearTimeout(loadTimeout);
       window.clearTimeout(exitTimer.current);
       player.pause();
       modal.close();
       document.body.style.overflow = overflow;
     };
-  }, [finish]);
+  }, [finish, reduced]);
   async function toggleSound() {
     const player = video.current;
     if (!player) return;
@@ -75,7 +78,7 @@ export function JocaIntro({ onFinish }: { onFinish: () => void }) {
     } catch {
       player.muted = true;
       setSound(false);
-      finish();
+      setManual(true);
     }
   }
   return (
@@ -87,7 +90,9 @@ export function JocaIntro({ onFinish }: { onFinish: () => void }) {
       onKeyDown={(e) => {
         if (e.key !== "Tab") return;
         const buttons = Array.from(
-          e.currentTarget.querySelectorAll<HTMLButtonElement>("button"),
+          e.currentTarget.querySelectorAll<HTMLButtonElement>(
+            "button:not(:disabled)",
+          ),
         );
         const index = buttons.indexOf(
           document.activeElement as HTMLButtonElement,
@@ -114,33 +119,44 @@ export function JocaIntro({ onFinish }: { onFinish: () => void }) {
         <div className="opening-screen">
           <video
             ref={video}
-            src="/videos/joca-apresentacao.mp4"
+            src="/videos/joca-apresentacao-web.mp4"
+            poster="/videos/joca-apresentacao-poster.webp"
             muted
-            autoPlay
+            autoPlay={!reduced && !manual}
             playsInline
-            preload="auto"
-            width="1920"
-            height="1080"
+            preload={reduced ? "metadata" : "auto"}
+            width="1280"
+            height="720"
             aria-label="Apresentação oficial de boas-vindas da Jóca"
-            onEnded={finish}
-            onError={finish}
+            onPlaying={() => setManual(false)}
+            onEnded={() => finish()}
+            onError={() => finish(false)}
             onVolumeChange={() => setSound(!(video.current?.muted ?? true))}
           />
         </div>
         <div className="opening-controls">
           <button
             type="button"
-            onClick={() => void toggleSound()}
+            onClick={() => {
+              if (manual)
+                void video.current?.play().catch(() => setManual(true));
+              else void toggleSound();
+            }}
             aria-pressed={sound}
+            aria-label={manual ? "Iniciar apresentação" : undefined}
           >
-            {sound ? "Desativar som" : "Ativar som"}
+            {manual ? "Iniciar vídeo" : sound ? "Desativar som" : "Ativar som"}
           </button>
-          <p>Apresentação de até 10 segundos</p>
+          <p role="status">
+            {manual
+              ? "Inicie o vídeo ou entre no site."
+              : "Apresentação de até 10 segundos"}
+          </p>
           <button
             ref={skip}
             type="button"
             className="opening-skip"
-            onClick={finish}
+            onClick={() => finish()}
           >
             Pular apresentação <span aria-hidden="true">↗</span>
           </button>
