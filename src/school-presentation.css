@@ -1,0 +1,222 @@
+@layer components {
+  .school-presentation {
+    border-top: 1px solid var(--line);
+  }
+  .school-editorial,
+  .founder-layout,
+  .team-section {
+    display: grid;
+    gap: 32px;
+    align-items: start;
+  }
+  .editorial-copy {
+    min-width: 0;
+  }
+  .editorial-copy h2 {
+    font-size: clamp(2rem, 3vw, 2.9rem);
+    line-height: 1.18;
+    max-width: 650px;
+  }
+  .editorial-copy .institutional-copy p,
+  .story-expanded p,
+  .founder-summary {
+    font-size: 0.9rem;
+    line-height: 1.85;
+    max-width: 65ch;
+  }
+  .editorial-copy .institutional-copy p + p,
+  .story-expanded p + p {
+    margin-top: 16px;
+  }
+  .editorial-photo {
+    padding: 16px;
+    background: #e8ede5;
+    border: 1px solid #d7dfd1;
+  }
+  .editorial-photo .official-photo img {
+    height: auto;
+    aspect-ratio: auto;
+    max-height: 650px;
+    object-fit: contain;
+  }
+  .editorial-photo .official-photo-empty {
+    aspect-ratio: 4/3;
+    min-height: 220px;
+  }
+  .school-classroom img {
+    filter: grayscale(1);
+  }
+  .editorial-photo figcaption {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .people-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 24px;
+  }
+  .people-links a {
+    font-size: 0.8rem;
+    padding: 12px 0;
+    border-bottom: 1px solid #bcae8e;
+    min-height: 44px;
+  }
+  .people-links span {
+    margin-left: 10px;
+    color: var(--gold);
+  }
+  .founder-section {
+    background: #f3e6df;
+    border-block: 1px solid #e3cfc2;
+  }
+  .founder-summary {
+    color: var(--muted);
+    margin-top: 24px;
+  }
+  .founder-photo {
+    background: #fbf5ef;
+    border-color: #e3cfc2;
+  }
+  .founder-photo .official-photo-empty {
+    background: #f0e4da;
+    border-color: #d0bfae;
+    aspect-ratio: 4/5;
+  }
+  .story-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 48px;
+    margin-top: 26px;
+    padding: 14px 18px;
+    background: var(--green);
+    color: var(--ivory);
+    border: 1px solid var(--green);
+    border-radius: 3px;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .story-toggle:hover {
+    background: #365548;
+  }
+  .story-toggle span {
+    font-size: 19px;
+  }
+  .story-expanded {
+    padding: 24px 0 0;
+    color: var(--muted);
+  }
+  .story-expanded[hidden] {
+    display: none;
+  }
+  .team-section .story-toggle {
+    background: transparent;
+    color: var(--green);
+    border-color: #a4b1a0;
+  }
+  .team-section .story-toggle:hover {
+    background: #e8ede5;
+  }
+  .team-closing {
+    font:
+      italic 1.15rem/1.65 Georgia,
+      serif;
+    margin-top: 28px;
+    border-left: 2px solid #c4ae7c;
+    padding-left: 20px;
+    color: var(--green);
+  }
+  .institutional-review {
+    font-size: 0.72rem;
+    line-height: 1.7;
+    color: var(--muted);
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+}
+@layer responsive {
+  @media (min-width: 960px) {
+    .school-editorial {
+      grid-template-columns: 1fr 1.1fr;
+      gap: 65px;
+    }
+    .founder-layout {
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+    }
+    .team-section {
+      grid-template-columns: 1fr 1.1fr;
+      gap: 45px 65px;
+    }
+    .editorial-photo {
+      padding: 24px;
+    }
+    .school-classroom {
+      margin-top: 55px;
+    }
+    .team-photo {
+      margin-top: 15px;
+    }
+    .institutional-review {
+      grid-column: 1/-1;
+    }
+    .founder-photo {
+      max-width: 400px;
+      justify-self: end;
+      width: 100%;
+    }
+  }
+  @media (max-width: 959px) {
+    .founder-photo {
+      grid-row: 1;
+      width: min(100%, 360px);
+      justify-self: center;
+    }
+    .editorial-copy h2 {
+      font-size: clamp(2rem, 5vw, 2.7rem);
+    }
+    .school-editorial .editorial-photo {
+      order: 2;
+    }
+    .school-editorial .editorial-copy {
+      order: 1;
+    }
+    .team-photo {
+      max-width: 650px;
+      width: 100%;
+      justify-self: center;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .story-expanded {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .school-editorial,
+  .founder-layout,
+  .team-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .editorial-photo {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+@layer responsive {
+  @media (min-width: 960px) {
+    .school-editorial,
+    .team-section {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    }
+    .founder-layout {
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    }
+  }
+}

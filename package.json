@@ -1,0 +1,40 @@
+{
+  "name": "site-joyce-helena",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run check:media -- public && tsc --noEmit && vite build && npm run check:media",
+    "preview": "vite preview --host 127.0.0.1 --port 4174",
+    "lint": "eslint .",
+    "test": "playwright test",
+    "check:media": "node scripts/check-production-media.mjs",
+    "worker:prepare": "node scripts/prepare-cloudflare-local.mjs",
+    "worker:mock": "node scripts/prepare-cloudflare-local.mjs && wrangler dev --config workers/joca-ai-teste/wrangler.mock.jsonc --local --ip 127.0.0.1 --port 8787 --show-interactive-dev-session=false",
+    "worker:types": "wrangler types workers/joca-ai-teste/worker-configuration.d.ts --config workers/joca-ai-teste/wrangler.jsonc --env-interface JocaWorkerEnv",
+    "worker:check": "tsc -p workers/joca-ai-teste/tsconfig.json"
+  },
+  "dependencies": {
+    "@google/genai": "3.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^10.14.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3",
+    "vite": "^7.2.2",
+    "wrangler": "4.160.1"
+  },
+  "engines": {
+    "node": ">=24.13.0"
+  }
+}

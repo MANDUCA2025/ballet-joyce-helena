@@ -1,0 +1,35 @@
+﻿node_modules/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+.local/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+
+# Cloudflare Workers
+**/.dev.vars
+**/.dev.vars.*
+!**/.dev.vars.example
+**/.wrangler/
+
+# Arquivos locais e temporarios
+.local/
+test-results/
+playwright-report/
+node_modules/
+dist/
+build/
+coverage/
+
+# Credenciais
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log

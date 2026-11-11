@@ -1,0 +1,163 @@
+export type GalleryPhoto = {
+  id: string;
+  collection: string;
+  caption: string;
+  alt: string;
+  width: number;
+  height: number;
+  authorized: boolean;
+  src: string;
+};
+// SITE-JOYCE-005B: autorização expressa para inclusão pública e futura divulgação na internet.
+// Novas fotografias devem iniciar com authorized: false, fora de public até revisão.
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    id: "aula-acolhimento",
+    collection: "escola",
+    caption: "Acolhimento em cada passo",
+    width: 606,
+    height: 852,
+    authorized: true,
+    src: "/images/escola/aula-acolhimento.png",
+    alt: "Acolhimento em cada passo — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "aula-acompanhamento",
+    collection: "escola",
+    caption: "Aprendendo juntas",
+    width: 600,
+    height: 784,
+    authorized: true,
+    src: "/images/escola/aula-acompanhamento.png",
+    alt: "Aprendendo juntas — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "aula-desenvolvimento",
+    collection: "escola",
+    caption: "Movimento e descoberta",
+    width: 579,
+    height: 743,
+    authorized: true,
+    src: "/images/escola/aula-desenvolvimento.png",
+    alt: "Movimento e descoberta — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "aula-tecnica",
+    collection: "escola",
+    caption: "A técnica do ballet",
+    width: 482,
+    height: 599,
+    authorized: true,
+    src: "/images/escola/aula-tecnica.png",
+    alt: "A técnica do ballet — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "aula-primeiros-passos",
+    collection: "escola",
+    caption: "Nossos primeiros passos",
+    width: 646,
+    height: 808,
+    authorized: true,
+    src: "/images/escola/aula-primeiros-passos.png",
+    alt: "Nossos primeiros passos — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "aula-convivencia",
+    collection: "escola",
+    caption: "Aprender também é conviver",
+    width: 485,
+    height: 620,
+    authorized: true,
+    src: "/images/escola/aula-convivencia.png",
+    alt: "Aprender também é conviver — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2024-apresentacao-01",
+    collection: "2024",
+    caption: "Apresentação de 2024 · registro 01",
+    width: 486,
+    height: 803,
+    authorized: true,
+    src: "/images/espetaculos/2024/2024-apresentacao-01.png",
+    alt: "Apresentação de 2024 · registro 01 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2024-apresentacao-02",
+    collection: "2024",
+    caption: "Apresentação de 2024 · registro 02",
+    width: 482,
+    height: 655,
+    authorized: true,
+    src: "/images/espetaculos/2024/2024-apresentacao-02.png",
+    alt: "Apresentação de 2024 · registro 02 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2024-apresentacao-03",
+    collection: "2024",
+    caption: "Apresentação de 2024 · registro 03",
+    width: 487,
+    height: 548,
+    authorized: true,
+    src: "/images/espetaculos/2024/2024-apresentacao-03.png",
+    alt: "Apresentação de 2024 · registro 03 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2025-apresentacao-01",
+    collection: "2025",
+    caption: "Apresentação de 2025 · registro 01",
+    width: 712,
+    height: 863,
+    authorized: true,
+    src: "/images/espetaculos/2025/2025-apresentacao-01.png",
+    alt: "Apresentação de 2025 · registro 01 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2025-apresentacao-02",
+    collection: "2025",
+    caption: "Apresentação de 2025 · registro 02",
+    width: 660,
+    height: 853,
+    authorized: true,
+    src: "/images/espetaculos/2025/2025-apresentacao-02.png",
+    alt: "Apresentação de 2025 · registro 02 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2025-apresentacao-03",
+    collection: "2025",
+    caption: "Apresentação de 2025 · registro 03",
+    width: 698,
+    height: 584,
+    authorized: true,
+    src: "/images/espetaculos/2025/2025-apresentacao-03.png",
+    alt: "Apresentação de 2025 · registro 03 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2025-apresentacao-04",
+    collection: "2025",
+    caption: "Apresentação de 2025 · registro 04",
+    width: 746,
+    height: 815,
+    authorized: true,
+    src: "/images/espetaculos/2025/2025-apresentacao-04.png",
+    alt: "Apresentação de 2025 · registro 04 — fotografia da Escola Joyce Helena",
+  },
+  {
+    id: "2025-apresentacao-05",
+    collection: "2025",
+    caption: "Apresentação de 2025 · registro 05",
+    width: 483,
+    height: 284,
+    authorized: true,
+    src: "/images/espetaculos/2025/2025-apresentacao-05.png",
+    alt: "Apresentação de 2025 · registro 05 — fotografia da Escola Joyce Helena",
+  },
+];
+export const galleryCollections = [
+  {
+    id: "escola",
+    title: "A vida acontece em cada aula.",
+    label: "NOSSA ESCOLA EM MOVIMENTO",
+  },
+  { id: "2024", title: "Memórias do palco — 2024", label: "ESPETÁCULOS" },
+  { id: "2025", title: "Memórias do palco — 2025", label: "ESPETÁCULOS" },
+];

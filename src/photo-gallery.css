@@ -1,0 +1,155 @@
+.photo-collection {
+  --photo-ink: #294c42;
+  --photo-paper: #faf6ef;
+  --photo-line: #c5ac83;
+  color: var(--photo-ink);
+  margin-block: 2.5rem 4rem;
+}
+.photo-collection-heading {
+  max-width: 48rem;
+  margin-bottom: 2rem;
+}
+.photo-collection-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-block: 0.6rem 1rem;
+}
+.photo-review-note {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 0.8rem;
+  align-items: start;
+}
+.photo-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+.photo-open {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--photo-line);
+  border-radius: 3px;
+  background: var(--photo-paper);
+  color: var(--photo-ink);
+  cursor: zoom-in;
+}
+.photo-open img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: #eee5dc;
+}
+.photo-open-label {
+  display: block;
+  font-size: 0.7rem;
+  padding: 0.65rem 0.1rem 0.2rem;
+  letter-spacing: 0.03em;
+}
+.photo-grid figcaption {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 0.8rem;
+}
+.photo-grid figcaption > span {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  padding-top: 0.2rem;
+}
+.performances .photo-collection {
+  color: #faf6ef;
+}
+.photo-open:focus-visible,
+.photo-lightbox button:focus-visible {
+  outline: 3px solid #a56c35;
+  outline-offset: 4px;
+}
+.photo-lightbox {
+  box-sizing: border-box;
+  width: min(1100px, calc(100% - 1.5rem));
+  max-width: none;
+  max-height: calc(100dvh - 1.5rem);
+  padding: 1rem;
+  border: 1px solid #c5ac83;
+  background: #faf6ef;
+  color: #294c42;
+  border-radius: 6px;
+}
+.photo-lightbox::backdrop {
+  background: rgb(12 30 25 / 0.91);
+}
+.lightbox-toolbar,
+.lightbox-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.lightbox-toolbar > span {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+.photo-lightbox button {
+  min-height: 44px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #b6a187;
+  border-radius: 3px;
+  background: #faf6ef;
+  color: #294c42;
+  cursor: pointer;
+}
+.photo-lightbox figure {
+  margin: 0.75rem 0;
+}
+.photo-lightbox figure img {
+  display: block;
+  width: 100%;
+  height: min(68dvh, 760px);
+  object-fit: contain;
+}
+.photo-lightbox figcaption {
+  padding-top: 0.7rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.lightbox-controls > span {
+  display: none;
+  font-size: 0.75rem;
+}
+@media (min-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .photo-open {
+    padding: 0.8rem;
+  }
+  .photo-grid figcaption {
+    font-size: 1rem;
+  }
+  .lightbox-controls > span {
+    display: block;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .photo-open {
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+  .photo-open:hover {
+    border-color: #8b663c;
+    box-shadow: 0 5px 18px rgb(42 60 47 / 0.12);
+  }
+}

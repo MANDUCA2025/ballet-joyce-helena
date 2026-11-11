@@ -1,0 +1,5 @@
+# Nunca usar um token real da Cloudflare aqui. Token aleatório apenas para a ponte local.
+LOCAL_BRIDGE_TOKEN=
+ALLOW_REAL_INFERENCE=false
+LICENSE_PRIVACY_REVIEWED=false
+ACCOUNT_QUOTA_VERIFIED=false

@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "joca-ai-teste-local-mock",
+  "main": "src/mock.ts",
+  "compatibility_date": "2026-11-11",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [],
+  "observability": {
+    "enabled": false
+  },
+  "dev": {
+    "ip": "127.0.0.1",
+    "port": 8787,
+    "local_protocol": "http"
+  },
+  "vars": {
+    "ALLOW_REAL_INFERENCE": "false",
+    "LICENSE_PRIVACY_REVIEWED": "false",
+    "ACCOUNT_QUOTA_VERIFIED": "false"
+  }
+}

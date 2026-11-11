@@ -1,0 +1,128 @@
+{
+  "authorization": "SITE-JOYCE-005B: direção autoriza expressamente as fotografias fornecidas nos arquivos públicos do site para futura divulgação pela internet. Sem documentos pessoais. Publicação não autorizada nesta etapa.",
+  "policy": "Nova mídia: authorized=false por padrão; manter fora de public até autorização expressa e revisão do hash.",
+  "assets": [
+    {
+      "path": "images/espetaculo-quatro-estacoes-2026.png",
+      "authorized": true,
+      "sha256": "e66caa5839e197f5dd34f0dc3812601364292166b83a085f07de246e7aaa5b65"
+    },
+    {
+      "path": "images/joca-perfil.png",
+      "authorized": true,
+      "sha256": "eb840259676deeef39e2a98673611edc827ba98b4cf02b7004840422b6a0c131"
+    },
+    {
+      "path": "images/joca-personagem.jpg",
+      "authorized": true,
+      "sha256": "6bde9770664086be2465106379cbdd09379d94478032c49db16ea2858eec14c9"
+    },
+    {
+      "path": "images/joyce-helena-equipe.png",
+      "authorized": true,
+      "sha256": "a97f360a5e714d0e39e641d3df766db390154a98eff58b9a18dd15d65b14880f"
+    },
+    {
+      "path": "images/joyce-helena-fundadora.png",
+      "authorized": true,
+      "sha256": "da82020b24bf7e58489f4b09a00adacb5ccf0594616c4452edd84ffeb94cd765"
+    },
+    {
+      "path": "images/joyce-helena-nossa-escola.png",
+      "authorized": true,
+      "sha256": "9b9be6987b5e8ff65d2c7b4f172457c025e0bfd98290e01f2ba7f899da9cdfbb"
+    },
+    {
+      "path": "images/logo-joyce-helena.jpg",
+      "authorized": true,
+      "sha256": "72955e10fc388c85f40d58fb1d153f4846c2dd819a3b303d55ff2e707ad3a9c1"
+    },
+    {
+      "path": "videos/joca-apresentacao.mp4",
+      "authorized": true,
+      "sha256": "86bb98975fd49a398d69e4b9a9a2439062f0df9d74491675e3d71f4610749aac"
+    },
+    {
+      "path": "images/escola/aula-acolhimento.png",
+      "authorized": true,
+      "sha256": "afa2600df59e769a8b866a11744fd9ec8dc5264b4dbcc3e30d79d8097d4f94cc"
+    },
+    {
+      "path": "images/escola/aula-acompanhamento.png",
+      "authorized": true,
+      "sha256": "ca551df9fd5ec4bc049d0898ae27f70675269aaa3bc1cc7adbd60e1481c843a7"
+    },
+    {
+      "path": "images/escola/aula-convivencia.png",
+      "authorized": true,
+      "sha256": "231517544c8b014a195980ce3697123811ca2a43e6102ba9957030e3af27da16"
+    },
+    {
+      "path": "images/escola/aula-desenvolvimento.png",
+      "authorized": true,
+      "sha256": "0620d66c45b52a6bacaf5880eb14ef6a3c64ba8b5cfb1837d0ccec2d7b4319f0"
+    },
+    {
+      "path": "images/escola/aula-primeiros-passos.png",
+      "authorized": true,
+      "sha256": "e0c78df8b3bb94608ee487674b2ce6d4179ab555b4a2f8c8d4a0528763b0e9de"
+    },
+    {
+      "path": "images/escola/aula-tecnica.png",
+      "authorized": true,
+      "sha256": "ed1b1da437085672ae173c4ed5e035e94492c0d9b07a97ba4af0d0008b8b5329"
+    },
+    {
+      "path": "images/espetaculos/2024/2024-apresentacao-01.png",
+      "authorized": true,
+      "sha256": "d1459d59d75c5ce39d06f325e61b0b3dd4bf9c2e338535811e1fe55887f37785"
+    },
+    {
+      "path": "images/espetaculos/2024/2024-apresentacao-02.png",
+      "authorized": true,
+      "sha256": "992a383e05e5e8b0b74b60723d7bba174eab4133cade4d6f7db552140d4b49ad"
+    },
+    {
+      "path": "images/espetaculos/2024/2024-apresentacao-03.png",
+      "authorized": true,
+      "sha256": "423e2f85d00c9127454edc8f76e18aed59ef32a5715e602cbd9c95886fc18091"
+    },
+    {
+      "path": "images/espetaculos/2025/2025-apresentacao-01.png",
+      "authorized": true,
+      "sha256": "4b6fe5bcd2651068821ec2d955cdb9087fff9be20d9313469729db1e7e522976"
+    },
+    {
+      "path": "images/espetaculos/2025/2025-apresentacao-02.png",
+      "authorized": true,
+      "sha256": "e9384a2d21797585f94a3fc54fe6074b7431dc8b21c2b4807261bb3aa374a3c9"
+    },
+    {
+      "path": "images/espetaculos/2025/2025-apresentacao-03.png",
+      "authorized": true,
+      "sha256": "e6196bd5761a83165afdb1e083d90213dc3a014881677c1a66905142e7d2dbcf"
+    },
+    {
+      "path": "images/espetaculos/2025/2025-apresentacao-04.png",
+      "authorized": true,
+      "sha256": "9c735894c7197fcc89baf1f53eeb10af064fa3fc82b131d52b38a76ee37b57d2"
+    },
+    {
+      "path": "images/espetaculos/2025/2025-apresentacao-05.png",
+      "authorized": true,
+      "sha256": "4bf1fa0468646cdc5afebbd7e5d9cf76e3b887a94091a387adfcdb7020e2b04f"
+    },
+    {
+      "path": "images/hero-joyce-helena.png",
+      "authorized": true,
+      "sha256": "b8f46c45c551c0e4f4df5a369fe7affee0598ec73022fe8f9a133e3775fdedd4",
+      "authorization": "SITE-JOYCE-005C: fotografia fornecida para substituição do Hero público."
+    },
+    {
+      "path": "images/joca-avatar.png",
+      "authorized": true,
+      "sha256": "05c250548326031e9db50937f68797d94afd549eb7e31646f1b760101baa6b82",
+      "authorization": "Avatar oficial fornecido para SITE-JOYCE-006A; original preservado sem edição."
+    }
+  ]
+}
