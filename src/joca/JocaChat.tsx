@@ -1,7 +1,12 @@
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
-import type { ChatReply, ChatService } from "./chat-service";
-import { ChatServiceFactory, type ChatProvider } from "./chat-service-factory";
+import type { ChatReply, ChatService, TopicContext } from "./chat-service";
+import {
+  ChatServiceFactory,
+  PUBLIC_CHAT,
+  type ChatProvider,
+} from "./chat-runtime";
 import { localChatService } from "./chat-service";
+import { initialQuestions } from "./intents";
 import { jocaKnowledge as k } from "./knowledge";
 import { scheduleContactUrl } from "../schedule-contact";
 import "./joca-chat.css";
@@ -28,8 +33,9 @@ export function JocaChat({
   const [simulation, setSimulation] = useState(false);
   const [consent, setConsent] = useState(false);
   const aiMode = useRef(false);
+  const topic = useRef<TopicContext | undefined>(undefined);
   useEffect(() => {
-    if (!request) return;
+    if (PUBLIC_CHAT || !request) return;
     const controller = new AbortController();
     void fetch("/api/joca/config", {
       signal: controller.signal,
@@ -97,9 +103,11 @@ export function JocaChat({
         })
         .reply(clean, {
           modality,
+          topic: topic.current,
           signal: controller.signal,
         });
       if (!controller.signal.aborted) {
+        topic.current = reply.topic;
         if (!followEnd.current) setUnread(true);
         setMessages((previous) => [
           ...previous.slice(-49),
@@ -204,6 +212,7 @@ export function JocaChat({
       );
     return () => {
       factory.revoke();
+      topic.current = undefined;
       aiMode.current = false;
       setConsent(false);
       active.current?.abort();
@@ -228,7 +237,7 @@ export function JocaChat({
   }, [messages, busy, request]);
   const disclosure = (
     <div className="joca-disclosure" id="joca-chat-disclosure">
-      {consent
+      {!PUBLIC_CHAT && consent
         ? provider === "cloudflare"
           ? simulation
             ? "Simulação local, sem inteligência artificial e sem envio à Cloudflare."
@@ -236,7 +245,7 @@ export function JocaChat({
           : "Inteligência artificial Gemini (Google). Respostas podem conter erros; confirme informações com a escola."
         : k.disclosure}
       <small>{k.privacy}</small>
-      {available && (
+      {!PUBLIC_CHAT && available && (
         <div className="joca-ai-consent">
           {consent ? (
             <button
@@ -424,14 +433,35 @@ export function JocaChat({
                 {message.id === 0 && disclosure}
               </Fragment>
             ))}
+            <nav className="joca-quick" aria-label="Sugestões de perguntas">
+              {(messages.length === 1
+                ? initialQuestions
+                : (messages.at(-1)?.suggestions ?? [
+                    "Conhecer modalidades",
+                    "Falar pelo WhatsApp",
+                  ])
+              ).map((question) => (
+                <button
+                  key={question}
+                  type="button"
+                  disabled={busy}
+                  onClick={() => {
+                    input.current?.focus({ preventScroll: true });
+                    void send(question);
+                  }}
+                >
+                  {question}
+                </button>
+              ))}
+            </nav>
           </div>
           <div className="joca-response-status">
             <span role="status">
               {busy
-                ? consent
+                ? !PUBLIC_CHAT && consent
                   ? "Consultando a IA…"
                   : "Consultando respostas locais…"
-                : consent
+                : !PUBLIC_CHAT && consent
                   ? provider === "cloudflare"
                     ? simulation
                       ? "Simulação local · sem IA"

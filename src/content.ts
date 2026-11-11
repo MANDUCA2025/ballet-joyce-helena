@@ -1,3 +1,9 @@
+export const schoolTeam = [
+  { name: "Joyce Helena", role: "Fundadora e Professora" },
+  { name: "Ester Rodrigues", role: "Professora" },
+  { name: "Mary", role: "Auxiliar" },
+  { name: "Natália Ramos", role: "Administração Geral" },
+];
 export const trialMessage =
   "Olá! Vim pelo site da Escola Joyce Helena e gostaria de informações para agendar uma aula experimental.";
 export const whatsappUrl = (number: string) =>
@@ -65,33 +71,33 @@ export const content = {
         name: "Baby",
         tagline: "Primeiras descobertas",
         symbol: "◡",
-        ageRange: "2 a 3 anos",
+        ageRange: null,
         description:
-          "Um convite às primeiras descobertas por meio do movimento.",
+          "Consulte nossa equipe para conhecer a modalidade mais indicada.",
       },
       {
         name: "Pré-Ballet",
         tagline: "Novos movimentos",
         symbol: "◠",
-        ageRange: "4 a 6 anos",
+        ageRange: null,
         description:
-          "Novos movimentos e possibilidades para explorar e aprender.",
+          "Consulte nossa equipe para conhecer a modalidade mais indicada.",
       },
       {
         name: "Infantil",
         tagline: "O encanto de aprender",
         symbol: "◇",
-        ageRange: "7 a 10 anos",
+        ageRange: null,
         description:
-          "Expressão e aprendizado para dar forma à alegria de dançar.",
+          "Consulte nossa equipe para conhecer a modalidade mais indicada.",
       },
       {
         name: "Preparatório",
         tagline: "Próximos passos",
         symbol: "✧",
-        ageRange: "10 a 13 anos",
+        ageRange: null,
         description:
-          "Desenvolvimento e dedicação para os próximos passos no ballet.",
+          "Consulte nossa equipe para conhecer a modalidade mais indicada.",
       },
     ] as Modality[],
   },
@@ -139,21 +145,19 @@ export const content = {
   team: {
     label: "NOSSA EQUIPE",
     title: "Talento, dedicação e carinho em cada movimento.",
+    members: schoolTeam,
     paragraphs: [
       "Por trás de cada aula, de cada conquista e de cada apresentação existe uma equipe que compartilha o mesmo propósito: transformar o amor pelo ballet em experiências especiais para nossas alunas.",
       "A Joyce Helena — Escola de Ballet conta com uma equipe formada por profissionais dedicadas, que unem atenção, sensibilidade e compromisso com o desenvolvimento de cada bailarina.",
-      "À frente da escola está Joyce Helena, fundadora e professora, que acompanha de perto o trabalho pedagógico e compartilha sua paixão pela dança.",
-      "Ao seu lado, duas professoras de ballet contribuem com seu trabalho e dedicação para tornar as aulas momentos de aprendizado, confiança e descoberta.",
-      "Na administração, Natália cuida da organização e do relacionamento com as famílias, ajudando a proporcionar uma experiência acolhedora também fora da sala de aula.",
-      "Juntas, formam uma equipe que acredita na importância de ensinar com carinho, incentivar cada conquista e fazer com que nossas bailarinas se sintam parte de uma grande família.",
+      ...schoolTeam.map(({ name, role }) => `${name} — ${role}.`),
       "Porque ensinar ballet é muito mais do que ensinar a dançar. É inspirar sonhos, construir confiança e deixar marcas positivas em cada história.",
     ],
     expandLabel: "Saiba mais sobre nossa equipe",
     collapseLabel: "Recolher apresentação da equipe",
     photo: {
       src: "/images/joyce-helena-equipe.png",
-      alt: "Fotografia oficial da equipe da Escola Joyce Helena",
-      caption: "Nossa equipe · dedicação compartilhada",
+      alt: "Registro institucional coletivo da Escola Joyce Helena",
+      caption: "Escola Joyce Helena · registro institucional",
       authorized: true,
     },
   },

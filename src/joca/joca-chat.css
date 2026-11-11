@@ -125,6 +125,7 @@
   color: var(--muted);
 }
 .joca-messages {
+  position: relative;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -402,4 +403,31 @@
   .joca-chat :focus-visible {
     outline-color: Highlight;
   }
+}
+
+/* Opções no fluxo rolável, sem competir com o campo de mensagem. */
+.joca-quick {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block: 12px;
+}
+.joca-quick button {
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--green);
+  border-radius: 16px;
+  background: var(--ivory);
+  color: var(--green);
+  font: inherit;
+  font-size: 0.8rem;
+  text-align: start;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.joca-quick button:disabled {
+  opacity: 0.6;
+  cursor: default;
 }

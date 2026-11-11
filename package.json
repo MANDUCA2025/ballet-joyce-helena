@@ -13,7 +13,8 @@
     "worker:prepare": "node scripts/prepare-cloudflare-local.mjs",
     "worker:mock": "node scripts/prepare-cloudflare-local.mjs && wrangler dev --config workers/joca-ai-teste/wrangler.mock.jsonc --local --ip 127.0.0.1 --port 8787 --show-interactive-dev-session=false",
     "worker:types": "wrangler types workers/joca-ai-teste/worker-configuration.d.ts --config workers/joca-ai-teste/wrangler.jsonc --env-interface JocaWorkerEnv",
-    "worker:check": "tsc -p workers/joca-ai-teste/tsconfig.json"
+    "worker:check": "tsc -p workers/joca-ai-teste/tsconfig.json",
+    "test:public": "playwright test --config playwright.public.config.ts"
   },
   "dependencies": {
     "@google/genai": "3.1.0",

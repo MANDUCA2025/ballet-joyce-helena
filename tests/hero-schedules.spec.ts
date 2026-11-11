@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { content } from "../src/content";
 import {
@@ -15,11 +15,16 @@ test.beforeEach(async ({ page }) => {
 test("hero original integrity, public build and previous photograph remain intact", async ({
   page,
 }) => {
-  const proof = JSON.parse(
-    readFileSync(".local/site005c-integrity.json", "utf8"),
-  );
+  // Reference recorded when the original Hero was approved (SITE-JOYCE-005C).
+  // The private original remains optional in a fresh checkout; public/build bytes
+  // must always match this independently recorded hash.
+  const proof = {
+    sha256: "b8f46c45c551c0e4f4df5a369fe7affee0598ec73022fe8f9a133e3775fdedd4",
+    width: 1448,
+  };
+  const original = ".local/originals/hero-joyce-helena.png.png";
   for (const path of [
-    proof.original,
+    ...(existsSync(original) ? [original] : []),
     "public/images/hero-joyce-helena.png",
     "dist/images/hero-joyce-helena.png",
   ]) {

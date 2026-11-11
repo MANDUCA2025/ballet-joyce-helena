@@ -13,24 +13,9 @@ test("institutional draft, pending modality fields and empty authorized gallery"
   const cards = page.locator("#modalidades article");
   await expect(cards).toHaveCount(4);
   for (let i = 0; i < 4; i++) {
-    await expect(cards.nth(i).locator("dt")).toHaveText([
-      "Faixa etária",
-      "Sobre a modalidade",
-    ]);
-    await expect(
-      cards
-        .nth(i)
-        .locator("dd")
-        .filter({ hasNot: page.locator("ul") }),
-    ).toHaveText([
-      ["2 a 3 anos", "4 a 6 anos", "7 a 10 anos", "10 a 13 anos"][i],
-      [
-        "Um convite às primeiras descobertas por meio do movimento.",
-        "Novos movimentos e possibilidades para explorar e aprender.",
-        "Expressão e aprendizado para dar forma à alegria de dançar.",
-        "Desenvolvimento e dedicação para os próximos passos no ballet.",
-      ][i],
-    ]);
+    await expect(cards.nth(i).locator("dt")).toHaveText(["Sobre a modalidade"]);
+    await expect(cards.nth(i).locator("dd")).toHaveText(["Consulte nossa equipe para conhecer a modalidade mais indicada."]);
+
   }
   await expect(page.locator("#espetaculos .photo-open")).toHaveCount(8);
   await expect(

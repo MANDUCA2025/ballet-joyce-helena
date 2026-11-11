@@ -9,11 +9,11 @@ test.beforeEach(async ({ page }) => {
 });
 test("local FAQ knowledge and conservative age guidance", () => {
   for (const [question, answer] of [
-    ["Quais modalidades existem?", "Baby: 2 a 3 anos"],
-    ["Minha filha tem 3 anos", "Baby"],
-    ["Qual turma para 10 anos?", "Há sobreposição"],
-    ["Qual modalidade para 10 anos?", "Há sobreposição"],
-    ["Ela tem 14 anos", "não define uma restrição"],
+    ["Quais modalidades existem?", "Baby; Pré-Ballet"],
+    ["Minha filha tem 3 anos", "Consulte nossa equipe"],
+    ["Qual turma para 10 anos?", "Consulte nossa equipe"],
+    ["Qual modalidade para 10 anos?", "Consulte nossa equipe"],
+    ["Ela tem 14 anos", "Consulte nossa equipe"],
     ["Onde fica a escola?", "Rua Alves Seabra, 4-30"],
     ["Como consultar horários?", "não posso confirmar horários ou vagas"],
     ["Quero aula experimental", "nem garante vaga"],
@@ -28,10 +28,10 @@ test("local FAQ knowledge and conservative age guidance", () => {
     );
   }
   expect(answerQuestion("Qual modalidade para 10 anos?").text).toContain(
-    "Infantil e Preparatório",
+    "Não definimos turmas por idade",
   );
   expect(answerQuestion("Qual modalidade para 6 anos?").text).toContain(
-    "confirmação final",
+    "Consulte nossa equipe",
   );
 });
 test("chat sends local replies, safe handoff, keyboard, privacy and reload reset", async ({
@@ -68,7 +68,7 @@ test("chat sends local replies, safe handoff, keyboard, privacy and reload reset
           : question.includes("horários")
             ? "WhatsApp"
             : question.includes("10")
-              ? "sobreposição"
+              ? "Consulte nossa equipe"
               : "Baby",
       ),
     );

@@ -9,7 +9,7 @@ export const publicKnowledge = {
     description,
   })),
   pendenciaEtaria:
-    "Faixas sujeitas à confirmação final. Há sobreposição aos 10 anos; consultar a escola, sem definir matrícula.",
+    "Não definir turmas por idade. Consultar a equipe para conhecer a modalidade mais indicada.",
   aulaExperimental:
     "Solicitar informações pelo WhatsApp. A equipe confirma horários e disponibilidade. Sem agendamento automático.",
   endereco: k.address,

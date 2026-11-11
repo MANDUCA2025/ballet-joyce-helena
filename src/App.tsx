@@ -53,10 +53,7 @@ export function App({
                 <h3>{item.name}</h3>
                 <p>{item.tagline}</p>
                 <dl className="modality-details">
-                  <div>
-                    <dt>{c.modalities.ageLabel}</dt>
-                    <dd>{item.ageRange ?? c.modalities.pending}</dd>
-                  </div>
+
                   <div>
                     <dt>{c.modalities.descriptionLabel}</dt>
                     <dd>

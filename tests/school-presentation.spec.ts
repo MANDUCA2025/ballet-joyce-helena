@@ -6,30 +6,23 @@ test.beforeEach(async ({ page }) => {
   );
   await page.emulateMedia({ reducedMotion: "reduce" });
 });
-test("founder story expands by keyboard, preserves supplied history and collapses", async ({
+test("restored founder story and official team keyboard expansion", async ({
   page,
 }) => {
   await page.goto("/");
   const section = page.locator("#fundadora");
-  const open = section.getByRole("button", { name: "Conheça nossa fundadora" });
-  await expect(open).toHaveAttribute("aria-expanded", "false");
-  const panel = page.locator("#" + (await open.getAttribute("aria-controls")));
-  await expect(panel).toBeHidden();
-  await open.focus();
-  await page.keyboard.press("Enter");
-  await expect(
-    section.getByRole("button", { name: "Recolher história da fundadora" }),
-  ).toHaveAttribute("aria-expanded", "true");
-  await expect(panel).toBeVisible();
-  await expect(panel.locator("p")).toHaveText(content.founder.story);
-  await expect(
-    section.getByRole("button", { name: "Recolher história da fundadora" }),
-  ).toBeFocused();
+  await expect(section.locator(".founder-summary")).toHaveText(content.founder.summary);
+  const toggle = section.getByRole("button");
+  await expect(toggle).toHaveAttribute("aria-expanded", "false");
+  await toggle.focus(); await page.keyboard.press("Enter");
+  await expect(toggle).toHaveAttribute("aria-expanded", "true");
+  await expect(section.locator(".story-expanded p")).toHaveText(content.founder.story);
   await page.keyboard.press("Space");
-  await expect(panel).toBeHidden();
+  await expect(section.locator(".story-expanded")).toBeHidden();
   await page
     .getByRole("button", { name: "Saiba mais sobre nossa equipe" })
-    .click();
+    .focus();
+  await page.keyboard.press("Enter");
   await expect(
     page.getByText(content.team.paragraphs[4], { exact: true }),
   ).toBeVisible();
@@ -56,8 +49,8 @@ test("official photo failures keep the three sections available", async ({
     await expect(section.locator(".official-photo img")).toHaveCount(0);
   }
   await expect(
-    page.getByRole("button", { name: "Conheça nossa fundadora" }),
-  ).toBeEnabled();
+    page.locator("#fundadora .founder-summary"),
+  ).toBeVisible();
 });
 test("responsive institutional sections and desktop/mobile captures", async ({
   page,

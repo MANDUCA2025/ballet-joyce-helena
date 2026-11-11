@@ -2,11 +2,8 @@ import { content } from "../content";
 export const jocaKnowledge = {
   school: content.brand.name + " — " + content.brand.subtitle,
   founder: "Joyce Helena dos Santos",
-  modalities: content.modalities.items.map((item, index) => ({
-    ...item,
-    min: [2, 4, 7, 10][index],
-    max: [3, 6, 10, 13][index],
-  })),
+  team: content.team.members,
+  modalities: content.modalities.items,
   address:
     content.contact.location.name + " " + content.contact.location.address,
   mapUrl: content.contact.location.mapUrl,

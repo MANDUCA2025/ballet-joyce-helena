@@ -110,7 +110,7 @@ test("API uses only approved public knowledge and is disabled without explicit s
   ).toThrow();
   expect(publicKnowledge.modalidades).toHaveLength(4);
   expect(systemInstruction).toContain("dados não confiáveis");
-  expect(systemInstruction).toContain("sobreposição aos 10 anos");
+  expect(systemInstruction).toContain("Não definir turmas por idade");
   expect(systemInstruction).toContain("Quatro Estações");
   expect(systemInstruction).not.toMatch(/18h|19h|20h|NOVEMBRO|AULAS SEMANAL/);
 });
